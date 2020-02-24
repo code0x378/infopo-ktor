@@ -10,6 +10,16 @@
 </section>
 
 <div class="container has-margin-bottom-1 has-margin-top-1">
-    <p>Just a small project for my wife and I.  I wanted to play more with ktor and bulma.</p>
+  <div class="content">
+      <p>Infopo is just a small inventory management app for my wife and I. She wanted something to track some of her
+          business's dog apparel and I just want to track my vintage electronics (i.e. 1970's stereos, TI-99s, Coleco
+          Vision, etc).  I wanted to try an old school website with ktor.  Everything runs on a PI and was built with:</p>
+      <ul>
+          <li>Ktor</li>
+          <li>Exposed</li>
+          <li>Flyway</li>
+          <li>Bulma</li>
+      </ul>
+  </div>
 </div>
 {% endblock %}

@@ -13,7 +13,7 @@
     <div class="columns">
         <div class="column">
             <h4 class="title is-4">Apparel</h4>
-            <p><a href="/admin/export/apparel" class="button is-large is-primary">Export</a></p>
+            <p><a href="/admin/export/apparel" class="button is-primary">Export</a></p>
             <hr>
             <p>
             <form action="/admin/import/apparel" enctype="multipart/form-data" method="post">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="field">
                     <div class="control">
-                        <input type="submit" value="Import" class="button is-large is-primary">
+                        <input type="submit" value="Import" class="button is-primary">
                     </div>
                 </div>
             </form>
@@ -32,7 +32,7 @@
         </div>
         <div class="column">
             <h4 class="title is-4">Electronics</h4>
-            <p><a href="/admin/export/electronics" class="button is-large is-primary">Export</a></p>
+            <p><a href="/admin/export/electronics" class="button is-primary">Export</a></p>
             <hr>
             <p>
             <form action="/admin/import/electronics" enctype="multipart/form-data" method="post">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="field">
                     <div class="control">
-                        <input type="submit" value="Import" class="button is-large is-primary">
+                        <input type="submit" value="Import" class="button is-primary">
                     </div>
                 </div>
             </form>

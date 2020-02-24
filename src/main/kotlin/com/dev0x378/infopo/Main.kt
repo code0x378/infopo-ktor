@@ -42,7 +42,7 @@ fun Application.mainModule() {
         jackson {
             registerModule(JodaModule())
             enable(SerializationFeature.INDENT_OUTPUT)
-//            disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+            disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
             setSerializationInclusion(JsonInclude.Include.NON_NULL)
             configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
             configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -77,5 +77,5 @@ fun initDB() {
     val config = HikariConfig("/hikari.properties")
     val ds = HikariDataSource(config)
     Database.connect(ds)
-    SeedData.load()
+//    SeedData.load()
 }

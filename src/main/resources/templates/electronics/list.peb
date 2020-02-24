@@ -5,7 +5,7 @@
     <div class="hero-body">
         <div class="container">
             <h1 class="title">Electronics</h1>
-            <h2 class="subtitle">You should buy more vintage crap</h2>
+            <h2 class="subtitle">Because you can never have enough "silver era" stereo equipment</h2>
         </div>
     </div>
 </section>
@@ -36,9 +36,9 @@
         <tr>
             <th>Name</th>
             <th>Status</th>
-            <th>Model Number</th>
+            <th>Manufactured By</th>
             <th>Obtained At</th>
-            <th>Sold At</th>
+            <th>Price</th>
             <th></th>
         </tr>
         </thead>
@@ -49,9 +49,9 @@
                     <a href="/electronics/{{ item.id }}">{{ item.name }} {% if(item.soldAt != null) %}(Sold) {% endif %}</a>
                 </td>
                 <td>{{ item.status }}</td>
-                <td>{{ item.modelNumber }}</td>
+                <td>{{ item.manufacturedBy }}</td>
                 <td>{{ item.obtainedAt.toString("MM/dd/yyyy") }}</td>
-                <td>{{ item.soldAt.toString("MM/dd/yyyy") }}</td>
+                <td>{{ item.obtainedPrice }}</td>
                 <td class="infopo-actions">
                     <a href="/electronics/{{ item.id }}" class="button is-primary is-small is-light">Edit</a>
                     <a href="/electronics/{{ item.id }}/delete" class="button is-danger is-small is-light"

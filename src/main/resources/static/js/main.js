@@ -1,5 +1,5 @@
 /**
- * Dropdown menu
+ * Bulma Dropdown menu
  */
 document.addEventListener('DOMContentLoaded', function() {
     const menus = document.querySelectorAll('.navbar-burger');
@@ -14,6 +14,5 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-
 });
 
