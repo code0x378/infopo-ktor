@@ -16,14 +16,12 @@ import com.zaxxer.hikari.HikariDataSource
 import io.ktor.application.Application
 import io.ktor.application.install
 import io.ktor.features.*
-import io.ktor.http.content.files
+import io.ktor.http.content.resources
 import io.ktor.http.content.static
 import io.ktor.jackson.jackson
 import io.ktor.routing.Routing
-import io.ktor.routing.route
 import org.flywaydb.core.Flyway
 import org.jetbrains.exposed.sql.Database
-import java.io.File
 import java.util.*
 
 fun Application.mainModule() {
@@ -63,18 +61,14 @@ fun Application.mainModule() {
             greedyMatchMethod = false
         }
     }
-    val staticfilesDir = File("src/main/resources/static")
-    require(staticfilesDir.exists()) { "Cannot find ${staticfilesDir.absolutePath}" }
-
     install(Routing) {
         default()
         admin()
         electronics(ElectronicsService())
         apparel(ApparelService())
-        static {
-            route("static") {
-                files(staticfilesDir)
-            }
+
+        static("static") {
+            resources("static")
         }
     }
 }
