@@ -1,0 +1,15 @@
+{% extends "templates/layouts/default.peb" %}
+
+{% block "content" %}
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">About</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container has-margin-bottom-1 has-margin-top-1">
+    <p>Just a small project for my wife and I.  I wanted to play more with ktor and bulma.</p>
+</div>
+{% endblock %}

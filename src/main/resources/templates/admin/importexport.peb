@@ -1,0 +1,54 @@
+{% extends "templates/layouts/default.peb" %}
+
+{% block "content" %}
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Import & Export</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container has-margin-bottom-3 has-margin-top-3">
+    <div class="columns">
+        <div class="column">
+            <h4 class="title is-4">Apparel</h4>
+            <p><a href="/admin/export/apparel" class="button is-large is-primary">Export</a></p>
+            <hr>
+            <p>
+            <form action="/admin/import/apparel" enctype="multipart/form-data" method="post">
+                <div class="field">
+                    <div class="control">
+                        <input type="file" name="apparel"/>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input type="submit" value="Import" class="button is-large is-primary">
+                    </div>
+                </div>
+            </form>
+            </p>
+        </div>
+        <div class="column">
+            <h4 class="title is-4">Electronics</h4>
+            <p><a href="/admin/export/electronics" class="button is-large is-primary">Export</a></p>
+            <hr>
+            <p>
+            <form action="/admin/import/electronics" enctype="multipart/form-data" method="post">
+                <div class="field">
+                    <div class="control">
+                        <input type="file" name="electronics"/>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input type="submit" value="Import" class="button is-large is-primary">
+                    </div>
+                </div>
+            </form>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

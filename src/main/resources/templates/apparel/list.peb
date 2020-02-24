@@ -1,0 +1,71 @@
+{% extends "templates/layouts/default.peb" %}
+
+{% block "content" %}
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Apparel</h1>
+            <h2 class="subtitle">Use the information below to locate apparel</h2>
+        </div>
+    </div>
+</section>
+
+<div class="container has-margin-bottom-3 has-margin-top-3">
+
+    <nav class="level">
+        <div class="level-left">
+            <div class="level-item">
+                <form action="/apparel/search" method="post" class="field has-addons">
+                    <div class="control">
+                        <input class="input" type="text" name="search" id="search"
+                               placeholder="Search by name" value="{{ terms }}">
+                    </div>
+                    <div class="control">
+                        <button class="button is-primary">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="level-right">
+            <p class="level-item"><a class="button is-primary" href="/apparel/create">Add</a></p>
+        </div>
+    </nav>
+
+    <table class="table is-striped is-fullwidth">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>XXS</th>
+            <th>XS</th>
+            <th>S</th>
+            <th>M</th>
+            <th>L</th>
+            <th>XL</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in apparel %}
+            <tr class="{% if(item.active != true) %}infopo-inactive {% endif %}">
+                <td>
+                    <a href="/apparel/{{ item.id }}">{{ item.name }} {% if(item.active != true) %}(Inactive) {% endif %}</a>
+                </td>
+                <td>{{ item.loc }}</td>
+                <td>{{ item.size_xxs }}</td>
+                <td>{{ item.size_xs }}</td>
+                <td>{{ item.size_s }}</td>
+                <td>{{ item.size_m }}</td>
+                <td>{{ item.size_l }}</td>
+                <td>{{ item.size_xl }}</td>
+                <td class="infopo-actions">
+                    <a href="/apparel/{{ item.id }}" class="button is-primary is-small is-light">Edit</a>
+                    <a href="/apparel/{{ item.id }}/delete" class="button is-danger is-small is-light"
+                       onclick="return confirm('Are you sure?')">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <p>{{ apparel.size() }} apparel</p>
+</div>
+{% endblock %}

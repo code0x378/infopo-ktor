@@ -1,0 +1,69 @@
+{% block "header" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/static/js/main.js"></script>
+    <title>{{ title }}</title>
+</head>
+<body>
+<div class="has-background-white">
+    <div class="container">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item title is-5 has-margin-bottom-0" href="/">{{ title }}</a>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                   data-target="navbar">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbar" class="navbar-menu">
+                <div class="navbar-start"></div>
+
+                <div class="navbar-end">
+                    <a href="/" class="navbar-item">Home</a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">Inventory</a>
+                        <div class="navbar-dropdown">
+                            <a href="/apparel" class="navbar-item">Apparel</a>
+                            <a href="/electronics" class="navbar-item">Electronics</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">Admin</a>
+                        <div class="navbar-dropdown">
+                            <a href="/admin/importexport" class="navbar-item">Import & Export</a>
+                            <hr class="navbar-divider">
+                            <a href="https://www.github.com" target="_blank" class="navbar-item">Report an issue</a>
+                        </div>
+                    </div>
+                    <a href="/about" class="navbar-item">About</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+{% endblock %}
+
+{% block "content" %}
+{% endblock %}
+
+<footer>
+    <div class=" has-text-centered">
+        <p class="is-7">
+            <strong>Infopo</strong> by <a href="https://jeffsmithdev.com">Jeff Smith</a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+    </div>
+</footer>
+</body>
+</html>

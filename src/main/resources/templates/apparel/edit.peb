@@ -1,0 +1,176 @@
+{% extends "templates/layouts/default.peb" %}
+
+{% block "content" %}
+
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Create / Edit</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container has-margin-bottom-3 has-margin-top-3">
+
+    <form action="/apparel/" method="post">
+        <input type="hidden" id="id" name="id" value="{{ item.id }}">
+        <input type="hidden" id="version" name="version" value="{{ item.version }}">
+
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                        <input class="input" type="text" id="name" name="name" value="{{ item.name }}">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-fifth">
+                <div class="field">
+                    <label class="label">Location</label>
+                    <div class="control">
+                        <input class="input" type="text" id="loc" name="loc" value="{{ item.loc }}">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-fifth">
+                <div class="field">
+                    <label class="label">Active</label>
+                    <div class="control">
+                        <input type="checkbox" id="active" name="active" {% if(item.active == true) %}
+                               checked {% else %} "" {% endif %} %}>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="columns">
+            <div class="column is-one-quarter">
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label">XXS</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control is-expanded">
+                                <input class="input" type="number" id="size_xxs" name="size_xxs"
+                                       value="{{ item.size_xxs }}">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label">XS</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control is-expanded">
+                                <input class="input" type="number" id="size_xs" name="size_xs"
+                                       value="{{ item.size_xs }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label">S</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control is-expanded">
+                                <input class="input" type="number" id="size_s" name="size_s" value="{{ item.size_s }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-quarter">
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label">M</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control is-expanded">
+                                <input class="input" type="number" id="size_m" name="size_m" value="{{ item.size_m }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label">L</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control is-expanded">
+                                <input class="input" type="number" id="size_l" name="size_l" value="{{ item.size_l }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label">XL</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control is-expanded">
+                                <input class="input" type="number" id="size_xl" name="size_xl"
+                                       value="{{ item.size_xl }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <label class="label is-normal">Notes</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <textarea class="textarea" id="notes" name="notes">{{ item.notes }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <nav class="level">
+            <div class="level-left">
+                <a href="/apparel/{{ item.id }}/delete" class="button is-danger"
+                   onclick="return confirm('Are you sure?')">Delete</a>
+            </div>
+
+            <div class="level-right">
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link">Submit</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-link is-light">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </form>
+
+    <hr>
+
+    <p class="has-text-grey is-size-7">Created At: {{ item.createdAt.toString("MM/dd/yyyy HH:mm") }}</p>
+    <p class="has-text-grey is-size-7">Created By: {{ item.createdBy }}</p>
+    <p class="has-text-grey is-size-7">Updated At: {{ item.updatedAt.toString("MM/dd/yyyy HH:mm") }}</p>
+    <p class="has-text-grey is-size-7">Updated By: {{ item.updatedBy }}</p>
+    <p class="has-text-grey is-size-7">Version: {{ item.version }}</p>
+
+</div>
+{% endblock %}

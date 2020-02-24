@@ -1,0 +1,65 @@
+{% extends "templates/layouts/default.peb" %}
+
+{% block "content" %}
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Electronics</h1>
+            <h2 class="subtitle">You should buy more vintage crap</h2>
+        </div>
+    </div>
+</section>
+
+<div class="container has-margin-bottom-3 has-margin-top-3">
+
+    <nav class="level">
+        <div class="level-left">
+            <div class="level-item">
+                <form action="/electronics/search" method="post" class="field has-addons">
+                    <div class="control">
+                        <input class="input" type="text" name="search" id="search"
+                               placeholder="Search by name" value="{{ terms }}">
+                    </div>
+                    <div class="control">
+                        <button class="button is-primary">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="level-right">
+            <p class="level-item"><a class="button is-primary" href="/electronics/create">Add</a></p>
+        </div>
+    </nav>
+
+    <table class="table is-striped is-fullwidth">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Model Number</th>
+            <th>Obtained At</th>
+            <th>Sold At</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in electronics %}
+            <tr class="{% if(item.soldAt != null) %}infopo-inactive {% endif %}">
+                <td>
+                    <a href="/electronics/{{ item.id }}">{{ item.name }} {% if(item.soldAt != null) %}(Sold) {% endif %}</a>
+                </td>
+                <td>{{ item.status }}</td>
+                <td>{{ item.modelNumber }}</td>
+                <td>{{ item.obtainedAt.toString("MM/dd/yyyy") }}</td>
+                <td>{{ item.soldAt.toString("MM/dd/yyyy") }}</td>
+                <td class="infopo-actions">
+                    <a href="/electronics/{{ item.id }}" class="button is-primary is-small is-light">Edit</a>
+                    <a href="/electronics/{{ item.id }}/delete" class="button is-danger is-small is-light"
+                       onclick="return confirm('Are you sure?')">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <p>{{ electronics.size() }} electronics</p>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "templates/layouts/default.peb" %}
+
+{% block "content" %}
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title has-text-centered">infopo</h1>
+            <h1 class="subtitle has-text-centered">Inventory management for only 2 people in the world</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container has-margin-bottom-3 has-margin-top-3">
+
+    <section>
+        <div class="columns features">
+            <div class="column is-4">
+                <div class="card is-shady">
+                    <div class="card-image has-text-centered">
+                        <i class="fa fa-paw"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h4>Pet apparel</h4>
+                            <p>Dedicated to a world without cold pets wearing fancy dresses.</p>
+                            <p><a href="/apparel">Let's Go</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="card is-shady">
+                    <div class="card-image has-text-centered">
+                        <i class="fa fa-calculator"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h4>Vintage electronics</h4>
+                            <p>Because you can never have enough "silver era" stereo equipment.</p>
+                            <p><a href="/electronics">Let's Go</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="card is-shady">
+                    <div class="card-image has-text-centered">
+                        <i class="fa fa-apple"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h4>Apple Friendly</h4>
+                            <p>This software runs on MacOS. (I needed another html card and icon.)</p>
+                            <p><a href="http://www.apple.com">Let's Go</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock %}

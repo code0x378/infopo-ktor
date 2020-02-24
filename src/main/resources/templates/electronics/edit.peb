@@ -1,0 +1,204 @@
+{% extends "templates/layouts/default.peb" %}
+
+{% block "content" %}
+
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Create / Edit</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container has-margin-bottom-3 has-margin-top-3">
+
+    <form action="/electronics/" method="post">
+        <input type="hidden" id="id" name="id" value="{{ item.id }}">
+        <input type="hidden" id="version" name="version" value="{{ item.version }}">
+
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                        <input class="input" type="text" id="name" name="name" value="{{ item.name }}">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-fifth">
+                <div class="field">
+                    <label class="label">Location</label>
+                    <div class="control">
+                        <input class="input" type="text" id="loc" name="loc" value="{{ item.loc }}">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-fifth">
+                <div class="field">
+                    <label class="label">Quantity</label>
+                    <div class="control">
+                        <input class="input" type="text" id="quantity" name="quantity" value="{{ item.quantity }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Model</label>
+                    <p class="control">
+                        <input class="input" type="text" id="modelNumber" name="modelNumber"
+                               value="{{ item.modelNumber }}">
+                    </p>
+                </div>
+                <div class="field">
+                    <label class="label">Serial</label>
+                    <div class="control">
+                        <input class="input" type="text" id="serialNumber" name="serialNumber"
+                               value="{{ item.serialNumber }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Status</label>
+                    <div class="control">
+                        <input class="input" type="number" id="status" name="status"
+                               value="{{ item.status }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Current Value</label>
+                    <div class="control">
+                        <input class="input" type="number" step="0.01" id="currentValue" name="currentValue"
+                               value="{{ item.currentValue }}">
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="field">
+                    <label class="label">Sold By</label>
+                    <div class="control">
+                        <input class="input" type="text" id="soldBy" name="soldBy"
+                               value="{{ item.soldBy }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Sold At</label>
+                    <div class="control">
+                        <input class="input" type="text" id="soldAt" name="soldAt"
+                               value="{{ item.soldAt.toString("yyyy-MM-dd") }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Sold Price</label>
+                    <div class="control">
+                        <input class="input" type="text" id="soldPrice" name="soldPrice"
+                               value="{{ item.soldPrice }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Sold Shipping</label>
+                    <div class="control">
+                        <input class="input" type="number" step="0.01" id="soldShippingPrice" name="soldShippingPrice"
+                               value="{{ item.soldShippingPrice }}">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="field">
+                    <label class="label">Obtained From</label>
+                    <div class="control">
+                        <input class="input" type="text" id="obtainedFrom" name="obtainedFrom"
+                               value="{{ item.obtainedFrom }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Obtained At</label>
+                    <div class="control">
+                        <input class="input" type="text" id="obtainedAt" name="obtainedAt"
+                               value="{{ item.obtainedAt.toString("yyyy-MM-dd") }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Obtained Price</label>
+                    <div class="control">
+                        <input class="input" type="number" step="0.01" id="obtainedPrice" name="obtainedPrice"
+                               value="{{ item.obtainedPrice }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Obtained Shipping Price</label>
+                    <div class="control">
+                        <input class="input" type="number" step="0.01" id="obtainedShippingPrice"
+                               name="obtainedShippingPrice"
+                               value="{{ item.obtainedShippingPrice }}">
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="field">
+                    <label class="label">Manufactured By</label>
+                    <div class="control">
+                        <input class="input" type="text" id="manufacturedBy" name="manufacturedBy"
+                               value="{{ item.manufacturedBy }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Manufactured At</label>
+                    <div class="control">
+                        <input class="input" type="text" id="manufacturedAt" name="manufacturedAt"
+                               value="{{ item.manufacturedAt.toString("yyyy-MM-dd") }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Manufactured Country</label>
+                    <div class="control">
+                        <input class="input" type="text" id="manufacturedCountry" name="manufacturedCountry"
+                               value="{{ item.manufacturedCountry }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label is-normal">Notes</label>
+                    <div class="control">
+                        <textarea class="textarea" id="notes" name="notes">{{ item.notes }}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <nav class="level">
+            <div class="level-left">
+                <a href="/electronics/{{ item.id }}/delete" class="button is-danger"
+                   onclick="return confirm('Are you sure?')">Delete</a>
+            </div>
+
+            <div class="level-right">
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-primary is-link">Submit</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-primary is-link is-light">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </form>
+
+    <hr>
+
+    <p class="has-text-grey is-size-7">Created At: {{ item.createdAt.toString("MM/dd/yyyy HH:mm") }}</p>
+    <p class="has-text-grey is-size-7">Created By: {{ item.createdBy }}</p>
+    <p class="has-text-grey is-size-7">Updated At: {{ item.updatedAt.toString("MM/dd/yyyy HH:mm") }}</p>
+    <p class="has-text-grey is-size-7">Updated By: {{ item.updatedBy }}</p>
+    <p class="has-text-grey is-size-7">Version: {{ item.version }}</p>
+
+</div>
+{% endblock %}
