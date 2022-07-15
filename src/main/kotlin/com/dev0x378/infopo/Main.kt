@@ -26,7 +26,7 @@ import java.util.*
 
 fun Application.mainModule() {
 
-    val flyway = Flyway.configure().dataSource("jdbc:postgresql://localhost/infopo",
+    val flyway = Flyway.configure().dataSource("jdbc:postgresql://localhost/infopo_ktor",
             "infopo", "Uxecfc19741974").load()
 //    flyway.clean()
     flyway.migrate()

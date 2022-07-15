@@ -58,7 +58,7 @@
                     <label class="label">Serial</label>
                     <div class="control">
                         <input class="input" type="text" id="serialNumber" name="serialNumber"
-                               value="{{ item.serialNumber }}">
+                               value="{{ item.modelNumber }}">
                     </div>
                 </div>
                 <div class="field">
